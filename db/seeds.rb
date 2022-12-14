@@ -18,13 +18,16 @@ require "faker"
 
   category = Category.create!(name: Faker::Commerce.unique.department)
 
-  last_price = Faker::Number.decimal(l_digits: 2)
-  product = Product.create!(category_id: category.id, name:  Faker::Commerce.unique.product_name,
-                            price: last_price,
-                            stock: Faker::Number.number(digits: 3))
+  10.times do
+    last_price = Faker::Number.decimal(l_digits: 2)
+    product = Product.create!(category_id: category.id, name:  Faker::Commerce.unique.product_name,
+                              price: last_price,
+                              stock: Faker::Number.number(digits: 3))
 
-  order = customer.orders.create!(product_id: product.id, date: Date.today, price: last_price,
-                                  quantity: Faker::Number.number(digits: 1))
+    order = customer.orders.create!(product_id: product.id, date: Date.today, price: last_price,
+                                    quantity: Faker::Number.number(digits: 1))
+  end
+
   # OR
   # order = product.orders.create!(customer_id: customer.id, date: Date.today, price: lastPrice,
   #                                quantity: Faker::Number.number(digits: 1))
