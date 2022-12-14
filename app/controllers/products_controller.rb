@@ -1,6 +1,7 @@
 class ProductsController < InheritedResources::Base
   def index
-    @products = Product.order(:created_at).page(params[:page])
+    @products = Product.search(params[:search])
+    @products = @products.order(:created_at).page(params[:page])
   end
 
   private
