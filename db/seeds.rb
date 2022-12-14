@@ -11,3 +11,19 @@ if Rails.env.development?
 end
 
 require "faker"
+
+10.times do
+  customer = Customer.create!(name:    Faker::FunnyName.unique.two_word_name,
+                              address: Faker::Address.unique.full_address)
+
+  lastPrice = Faker::Number.decimal(l_digits: 2)
+  product = Product.create!(name:  Faker::Commerce.unique.product_name,
+                            price: lastPrice,
+                            stock: Faker::Number.number(digits: 3))
+
+  order = customer.orders.create!(product_id: product.id, date: Date.today, price: lastPrice,
+                                  quantity: Faker::Number.number(digits: 1))
+  # OR
+  # order = product.orders.create!(customer_id: customer.id, date: Date.today, price: lastPrice,
+  #                                quantity: Faker::Number.number(digits: 1))
+end
