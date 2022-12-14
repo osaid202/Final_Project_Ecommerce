@@ -73,3 +73,5 @@ end
 
 gem 'devise'
 gem 'activeadmin'
+
+gem 'faker'
