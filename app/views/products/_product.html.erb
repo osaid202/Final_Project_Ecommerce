@@ -14,4 +14,9 @@
     <%= product.stock %>
   </p>
 
+   <p>
+    <strong>Category:</strong>
+    <%= link_to Category.find(product.category_id).name, Category.find(product.category_id) %>
+  </p>
+
 </div>

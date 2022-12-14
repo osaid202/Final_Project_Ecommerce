@@ -4,4 +4,10 @@
     <%= category.name %>
   </p>
 
+  <p>
+    <strong>Products:</strong>
+    <% category.products.each do |c|%>
+      <%= link_to c.name, Product.find(c.id) %><br>
+    <% end%>
+  </p>
 </div>
