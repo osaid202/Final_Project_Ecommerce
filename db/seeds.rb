@@ -1,5 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
+# This file should contain all the record creation needed to seed the database with
+# its default values.
+# The data can then be loaded with the bin/rails db:seed command (or created alongside the database
+# with db:setup).
 #
 # Examples:
 #
@@ -29,7 +31,8 @@ require "faker"
     # order = customer.orders.create!(date: Date.today, grandTotal: product1_price,
     #                                 quantity: Faker::Number.number(digits: 1))
     taxes = ((product1.price + product2.price) * 0.11).round(2)
-    order = product1.orders.create!(customer_id: customer.id, taxes: taxes, grandTotal: product1.price + product2.price + taxes,
+    order = product1.orders.create!(customer_id: customer.id, taxes: taxes,
+                                    grandTotal: product1.price + product2.price + taxes,
                                     quantity: Faker::Number.number(digits: 1))
     order.products << product2
     # order.product = product

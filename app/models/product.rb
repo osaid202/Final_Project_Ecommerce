@@ -2,7 +2,7 @@ class Product < ApplicationRecord
   belongs_to :category
   has_and_belongs_to_many :orders
 
-  def self.search(search, category)
+  def self.search(search, category) # rubocop:disable Metrics/AbcSize
     if !search.to_s.strip.empty? && !category.to_s.strip.empty?
       # where(name: search)
       where(["name LIKE ? and category_id= ?", "%#{search}%",

@@ -19,14 +19,12 @@ ActiveAdmin.register Order do
   form do |f|
     f.semantic_errors
     f.inputs "Order" do
-      f.has_many :customer, heading:       "Customer",
-                            allow_destroy: true,
+      f.has_many :customer, heading:       "Customer", allow_destroy: true,
                             new_record:    true do |a|
         a.input :name
         a.input :address
       end
-      f.has_many :products, heading:       "products",
-                            allow_destroy: true,
+      f.has_many :products, heading:       "products", allow_destroy: true,
                             new_record:    true do |a|
         a.input :id, as: :select, collection: Product.select(:name).uniq
 
