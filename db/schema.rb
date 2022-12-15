@@ -9,6 +9,7 @@
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
+# rubocop:disable all
 
 ActiveRecord::Schema[7.0].define(version: 2022_12_14_125455) do
   create_table "active_admin_comments", force: :cascade do |t|

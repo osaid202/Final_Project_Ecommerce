@@ -78,5 +78,5 @@ gem 'faker'
 
 gem 'kaminari'
 
-gem 'rubocop'
-gem 'rubocop-rails'
+# gem 'rubocop'
+# gem 'rubocop-rails'
