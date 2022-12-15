@@ -1,6 +1,11 @@
 <div id="<%= dom_id order %>">
+ <p>
+    <strong>Order#:</strong>
+    <%= order.id %>
+  </p>
+
   <p>
-    <strong>Date:</strong>
+    <strong>Created on:</strong>
     <%= order.created_at %>
   </p>
 
@@ -13,12 +18,12 @@
 
   <p>
     <strong>Taxes:</strong>
-    <%= order.taxes %>
+    <%= "$#{order.taxes}" %>
   </p>
 
   <p>
     <strong>GrandTotal:</strong>
-    <%= order.grandTotal %>
+    <%= "$#{order.grandTotal}" %>
   </p>
 
   <p>
