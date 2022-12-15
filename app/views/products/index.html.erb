@@ -9,13 +9,13 @@
 <%# Search form %>
   <%= form_with(url: '/products', method: 'get', local: true) do  |f|%>
     <%= f.label :product%>
-    <%= text_field_tag(:search) %>
+    <%= text_field_tag(:product) %>
     <%= f.label :category%>
     <%= f.select :category, options_for_select(@categories), include_blank: true %><br><br>
     <%= submit_tag("Search") %>
   <% end %>
-  <% if params[:search]%>
-    <%= "Search term: #{params[:search]}"%>
+  <% if params[:product]%>
+    <%= "Search term: #{params[:product]}"%>
   <% end%>
 
 
