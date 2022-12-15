@@ -4,6 +4,7 @@ ActiveAdmin.register Product do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
+  belongs_to :order, optional: true # BEFORE permit
   permit_params :name, :price, :stock, :category_id
   #
   # or
