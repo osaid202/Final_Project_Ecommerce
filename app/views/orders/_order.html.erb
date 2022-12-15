@@ -1,12 +1,24 @@
 <div id="<%= dom_id order %>">
   <p>
     <strong>Date:</strong>
-    <%= order.date %>
+    <%= order.created_at %>
   </p>
 
   <p>
-    <strong>Price:</strong>
-    <%= order.price %>
+    <strong>Products:</strong>
+    <% order.products.each do |p|%>
+      <br><%= link_to "Product:#{p.name}", Product.find(p.id) %><br>
+    <% end%>
+  </p>
+
+  <p>
+    <strong>Taxes:</strong>
+    <%= order.taxes %>
+  </p>
+
+  <p>
+    <strong>GrandTotal:</strong>
+    <%= order.grandTotal %>
   </p>
 
   <p>
@@ -16,7 +28,7 @@
 
   <p>
     <strong>Customer:</strong>
-    <%= order.customer_id %>
+    <%= link_to Customer.find(order.customer_id).name,  Customer.find(order.customer_id) %>
   </p>
 
 </div>

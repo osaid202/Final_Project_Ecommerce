@@ -9,4 +9,10 @@
     <%= customer.address %>
   </p>
 
+   <p>
+    <strong>Orders:</strong>
+    <% customer.orders.each do |c|%>
+      <%= link_to "Order##{c.id}", Order.find(c.id) %>
+    <% end%>
+  </p>
 </div>
